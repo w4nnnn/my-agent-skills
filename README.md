@@ -17,7 +17,7 @@ Repositori ini berisi serangkaian prosedur kerja (*runbooks*), panduan tipografi
 
 ---
 
-## 🚀 Cara Instalasi
+## 🚀 Cara Pemasangan & Penggunaan
 
 ### 1. Kloning Repositori
 ```bash
@@ -25,15 +25,19 @@ git clone git@github.com:w4nnnn/my-agent-skills.git
 cd my-agent-skills
 ```
 
-### 2. Jalankan Skrip Pemasangan Otomatis
-```bash
-chmod +x install.sh
-./install.sh
-```
+### 2. Tautkan Skill ke Direktori AI Agent Anda
 
-Skrip akan menautkan (*symlink*) seluruh folder skill ke:
-* `~/.gemini/config/skills/` (Discovery Global Antigravity GUI & CLI)
-* `~/.agents/skills/` (Discovery User Local)
+Pilih direktori sesuai target environment agen Anda:
+
+```bash
+# Untuk Google Antigravity (Global discovery):
+mkdir -p ~/.gemini/config/skills
+ln -sfn "$(pwd)/skills/"* ~/.gemini/config/skills/
+
+# Untuk Claude Code / Agent Local discovery:
+mkdir -p ~/.agents/skills
+ln -sfn "$(pwd)/skills/"* ~/.agents/skills/
+```
 
 ---
 
